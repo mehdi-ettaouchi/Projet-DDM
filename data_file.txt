@@ -1,0 +1,34 @@
+# Data file with tf,dt,Nx,NyLx,Ly,D and case
+
+# Time parameters
+tf
+3
+dt
+0.1
+
+# Diffusion coefficients
+D
+1.
+
+#cas
+cas
+4
+
+
+#geometry parameters
+Nx
+60
+Ny
+60
+Lx
+1.
+Ly
+1.
+# nb de mailles contenue dans le recouvrement 
+n
+24
+# paramètres de conditions Neumann-Dirichlet
+alpha 
+2
+beta
+1

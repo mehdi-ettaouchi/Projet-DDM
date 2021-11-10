@@ -1,0 +1,31 @@
+#To plot heatmap, to verify what was given in moodle
+#Warning, change the number of procs, or at least let it be set at a big number so as to not to confuse you with a chopped up solution. I set it to 40. However a big error message is going to be displayed bu gnuplot. My version of gnuplot on ubuntu 20.04 is permissive to this kind of things so it worked like a charm.
+#colours used in moodle are red blue, we used brown, red, purple and blue respectively.
+
+reset
+set contour
+unset surface
+set cntrparam levels incr -0.3,0.1,0.5
+
+set view map
+
+
+set dgrid3d 100,100,4
+
+unset contour
+set surface
+set table "dgrid.txt"
+#use one or the other in sequential or parallel
+#splot for [i=0:2] "solution_from_proc".i.".txt" 
+splot "sol.dat"
+unset table
+
+reset
+set pm3d map
+unset key
+set palette defined (0 'blue', 1 'white', 2 'red')
+set autoscale fix
+set grid
+
+set size square
+splot 'dgrid.txt' w pm3d

@@ -1,0 +1,11 @@
+# cmd_file_line
+#
+#  gnuplot < cmd_file_line
+#
+set xlabel '<--- X --->'
+set ylabel '<--- Y --->'
+set zlabel '<--- Sol --->'
+set title 'Solution'
+set grid
+set style data lines
+splot 'solG.dat' using 1:2:3 w p 
